@@ -4,5 +4,5 @@
     <url>/jsondir/{folderpath}?verbose={verbose?}.json</url>
     <authentication>user</authentication>
     <format default=''>argument</format>
-    <lifecycle>sample</lifecycle>
+    <!--<lifecycle>sample</lifecycle>-->
 </webscript>

@@ -1,0 +1,4 @@
+*.log
+*.iml
+.idea
+alf_data_dev

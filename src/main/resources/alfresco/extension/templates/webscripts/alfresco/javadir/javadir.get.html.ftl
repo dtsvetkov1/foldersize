@@ -8,15 +8,15 @@
 <table>
     <#list Folder as child>
         <tr>
-            <td><#if child.folder.isContainer>d</#if></td>
-            <td>${child.folder.name}</td>
+            <td><#if child.element.isContainer>d</#if></td>
+            <td>${child.element.name}</td>
             <td>${child.size} MB</td>
             <#if verbose>
-                <td>${child.folder.properties.modifier}</td>
-                <td><#if child.folder.isDocument>
-            ${child.folder.properties.content.size}</#if></td>
-                <td>${child.folder.properties.modified?date}</td>
-                <td>${child.folder.properties.modified?date}</td>
+                <td>${child.element.properties.modifier}</td>
+                <td><#if child.element.isDocument>
+            ${child.element.properties.content.size}</#if></td>
+                <td>${child.element.properties.modified?date}</td>
+                <td>${child.element.properties.modified?date}</td>
             </#if>
         </tr>
     </#list>

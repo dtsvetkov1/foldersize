@@ -19,18 +19,21 @@
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans
           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-	<bean id="webscript.alfresco.tutorials.helloworld.get"
-		  class="org.example.platformsample.HelloWorldWebScript"
-		  parent="webscript">
-	</bean>
+    <!--<bean id="webscript.alfresco.tutorials.helloworld.get" class="org.example.platformsample.HelloWorldWebScript" parent="webscript"></bean>-->
+    <!--<bean id="webscript.alfresco.javadir.javadir.get"-->
 
-		<bean id="webscript.alfresco.javadir.javadir.get"
-		  class="org.example.JavaDir" parent="webscript">
-		<property name="repository" ref="repositoryHelper"/>
-		<property name="nodeService" ref="NodeService"/>
-	</bean>
+    <bean id="webscript.alfresco.tutorials.helloworld.get"
+          class="org.example.platformsample.HelloWorldWebScript" parent="webscript"></bean>
 
-    <bean id="webscript.alfresco.jsondir.jsondir.get"
-          class="org.example.jsondir.JsonDir" parent="webscript">
+    <bean id="webscript.alfresco.javadir.javadir.get" class="org.example.JavaDir" parent="webscript">
+        <property name="folderSizeService" ref="folderSizeService"/>
+    </bean>
+    <bean id="webscript.alfresco.jsondir.jsondir.get" class="org.example.jsondir.JsonDir" parent="webscript">
+        <property name="folderSizeService" ref="folderSizeService"/>
+    </bean>
+
+    <bean id="folderSizeService" class="org.example.FolderSizeService">
+        <property name="repository" ref="repositoryHelper"/>
+        <property name="nodeService" ref="NodeService"/>
     </bean>
 </beans>
